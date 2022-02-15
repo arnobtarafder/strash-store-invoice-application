@@ -282,8 +282,35 @@ $
     document.getElementById('show-date').innerText=date.toLocaleDateString()
 </script>
         <script src="app.js"></script>
-        
-
+<!--         
+        [build]
+        command = "npm run build"
+        publish = "public/"
+      
+      # Redirect rule defined in "_redirect" isn't working.
+      # using netlify.toml instead.
+      # Refer to the documentation - https://www.netlify.com/docs/netlify-toml-reference/#getting-started
+      [[redirects]]
+        from = "/*"
+        to = "/index.html"
+        status = 200
+      
+        [[redirects]]
+        from = "/old-path"
+        to = "/new-path"
+        status = 301
+        force = false
+        query = {path = ":path"}
+        conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
+      
+      ## This rule redirects to an external API, signing requests with a secret
+      [[redirects]]
+        from = "/search"
+        to = "https://api.mysearch.com"
+        status = 200
+        force = true # COMMENT: ensure that we always redirect
+        headers = {X-From = "Netlify"}
+        signed = "API_SIGNATURE_TOKEN" -->
     </body>
 
 </html>
