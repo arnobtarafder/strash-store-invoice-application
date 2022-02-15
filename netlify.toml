@@ -1,9 +1,7 @@
 [build]
   command = npm run build
   base: /opt/build/repo
-  commandOrigin: config
   publish: /opt/build/repo/public
-  repository = "https://github.com/arnobtarafder/strash-store-invoice-application.git"
 
 [[redirects]]
    from = "/*"
